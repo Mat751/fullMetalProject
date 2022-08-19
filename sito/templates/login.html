@@ -1,0 +1,38 @@
+{% extends "base.html" %} {% block title %}login{% endblock %}
+
+{% block
+    content %}
+    <form method="POST">
+      <h3 align="left" style="margin:30px;">Login</h3>
+      <div class="form-goup" style="width: 20%; margin:30px; padding:5px;">
+        <label for="email">Indirizzo Email</label>
+        <input
+          type="email"
+          class="form-control"
+          id="email"
+          name="email"
+          placeholder="Inserire email"
+        />
+      </div>
+      <div class="form-goup" style="width: 20%; margin:30px; padding:5px;">
+        <label for="password">Password</label>
+        <input
+          type="password"
+          class="form-control"
+          id="password"
+          name="password"
+          placeholder="Inserire password"
+        />
+      </div>
+
+      <h4>
+        <li style="margin:30px; padding:5px;" >Non sei registrato? Clicca qui: 
+            <a href="/registrazione">registrazione</a> 
+        </li>
+      </h4>
+      
+      <button type="submit" class="btn btn-primary" style="width: 5%; margin:30px; padding:5px;">Invia</button>
+    </form>
+
+    
+{% endblock %}

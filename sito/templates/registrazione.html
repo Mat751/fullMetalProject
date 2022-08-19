@@ -1,0 +1,59 @@
+{% extends "base.html" %} {% block title %}Registrazione{% endblock %} {% block
+    content %}
+    <form method="POST">
+      <h3 align="center">Registrazione</h3>
+      <div class="form-goup" style="width: 20%; margin:15px; padding:5px;">
+        <label for="email">Indirizzo Email</label>
+        <input
+          type="email"
+          class="form-control"
+          id="email"
+          name="email"
+          placeholder="Inserire email"
+        />
+      </div>
+      <div class="form-goup" style="width: 20%; margin:15px; padding:5px;">
+        <label for="nome">Nome</label>
+        <input
+          type="text"
+          class="form-control"
+          id="nome"
+          name="nome"
+          placeholder="Inserire nome"
+        />
+      </div>
+      <div class="form-goup" style="width: 20%; margin:15px; padding:5px;">
+        <label for="cognome">Cognome</label>
+        <input
+          type="text"
+          class="form-control"
+          id="cognome"
+          name="cognome"
+          placeholder="Inserire cognome"
+        />
+      </div>
+      <div class="form-goup" style="width: 20%; margin:15px; padding:5px;">
+        <label for="password1">Password</label>
+        <input
+          type="password"
+          class="form-control"
+          id="password1"
+          name="password1"
+          placeholder="Inserire password"
+        />
+      </div>
+      <div class="form-goup" style="width: 20%; margin:15px; padding:5px;">
+        <label for="password2">Password (Conferma)</label>
+        <input
+          type="password"
+          class="form-control"
+          id="password2"
+          name="password2"
+          placeholder="Conferma password"
+        />
+      </div>
+      <br />
+      <button type="submit" class="btn btn-primary" style="width: 5%; margin:15px;">Invia</button>
+    </form>
+    {% endblock %}
+    

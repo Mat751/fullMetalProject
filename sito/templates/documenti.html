@@ -1,0 +1,49 @@
+{% extends "base.html" %} {% block title %}Iscrizione{% endblock %}
+{% block content %}
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  
+  <form method = "POST" enctype = "multipart/form-data">
+  <div class="col-xs-6 form-group"  style="width: 20%; margin:25px; padding:5px;">
+    <label for="tipo">Seleziona iscritto:</label>
+      <select name="tipo" id="tipo">
+        {% for iscritto in current_user.iscritto %}
+          <option selected value="codice_iscritto">{{ iscritto.first_name + ' ' + iscritto.surname + ' ' + iscritto.codice_fiscale}}</option>
+        {% endfor %}
+        </select>
+  </label>
+  </div>
+  
+  
+  <div class="col-xs-6 form-group" style="width: 35%;">
+  <label for="identita">Documento identità</label>
+  <input
+   type="file"
+   class="form-control"
+   id="identita"
+   name="identita"
+   placeholder="Carica documento di identità"
+   required
+  />
+  <br>
+  <input type = "submit"/>
+  </div>
+
+  <div class="col-xs-6 form-group" style="width: 35%;">
+  <label for="iscrizione">Iscrizione firmata</label>
+  <input
+   type="file"
+   class="form-control"
+   id="iscrizione"
+   name="iscrizione"
+   placeholder="Carica iscrizione firmata"
+   required
+  />
+  <br>
+  <input type = "submit"/>
+  </div>
+</form>
+
+
+        
+  
+{% endblock %}

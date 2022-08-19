@@ -1,0 +1,14 @@
+.navbar-default {
+    margin-bottom: 0px;
+  }
+  
+  .cover {
+    width: auto;
+    height: 780px;
+    background-image: url("/static/img/logo.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+  }
+  

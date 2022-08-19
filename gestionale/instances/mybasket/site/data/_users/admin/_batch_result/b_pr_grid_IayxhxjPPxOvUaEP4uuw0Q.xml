@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<GenRoBag><title>Print grid</title>
+<batch_id>pr_grid_IayxhxjPPxOvUaEP4uuw0Q</batch_id>
+<owner_page_id>8CC73PCROaab8b4IC9mnCQ</owner_page_id>
+<note _T="NN"></note>
+<start_ts _T="DH">2021-09-01T15:42:42.978387+02:00</start_ts>
+<end_ts _T="DH">2021-09-01T15:42:46.683854+02:00</end_ts>
+<time_delta>0:00:03</time_delta>
+<result url="/_user/admin/output/pdf/lC7H_hU9Me6cyVaUFWTB2g.pdf?download=True&amp;mtime=1630503767" document_name="lC7H_hU9Me6cyVaUFWTB2g" url_print='javascript:genro.openWindow("/_user/admin/output/pdf/lC7H_hU9Me6cyVaUFWTB2g.pdf?mtime=1630503767","lC7H_hU9Me6cyVaUFWTB2g");'></result></GenRoBag>
