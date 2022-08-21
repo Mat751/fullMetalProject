@@ -14,7 +14,10 @@ RUN cd genropy/gnrpy && paver develop && python3 initgenropy.py
 RUN sed 's/pwd=[^[:space:]]*/pwd="admin" /g' -i /root/.gnr/instanceconfig/default.xml
 RUN sed -i '4i <db implementation="postgres" host="postgres" user="postgres" password="postgres" port="5432" />' /root/.gnr/instanceconfig/default.xml
 
-RUN cd /app/genropy_projects && git clone https://github.com/Mat751/Basket.git
+RUN mkdir /app/genropy_projects/Basket 
+
+COPY instances /app/genropy_projects/Basket/instances
+COPY packages /app/genropy_projects/Basket/packages
 
 COPY start_genropy.sh /app/start_genropy.sh
 RUN chmod +x /app/start_genropy.sh

@@ -34,6 +34,8 @@ services:
       - basket_net
     ports:
       - "5000:5000"
+    depends_on:
+      - postgres
 
   postgres:
     image: postgres:11.11

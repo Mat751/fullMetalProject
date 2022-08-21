@@ -8,11 +8,11 @@ from db import db
 from dotenv import load_dotenv
 from flask_security import Security, SQLAlchemyUserDatastore, current_user
 from flask_migrate import Migrate
+from utils.dbConnector import dbConnector
 from utils.models import User, Role
 from bootstrapRenderer import RightRenderer   
 from flask_login import LoginManager
-from sqlalchemy import create_engine
-from sqlalchemy_utils import database_exists, create_database
+
 
 load_dotenv()
 
@@ -23,10 +23,9 @@ security = Security()
 def create_app():
     
     app = Flask(__name__,template_folder='templates')
-    create_database_if_not_exists()
     
     app.config['SECRET_KEY'] = os.getenv('SECRET_KEY')
-    app.config['SQLALCHEMY_DATABASE_URI'] = create_postgres_url()
+    app.config['SQLALCHEMY_DATABASE_URI'] = dbConnector.create_postgres_url('sito')
     app.config['DEBUG'] = True
     app.config['ADMIN_MAIL'] = os.getenv('ADMIN_MAIL')
     app.config['ADMIN_PASSWORD'] = os.getenv('ADMIN_PASSWORD')
@@ -70,6 +69,8 @@ def create_app():
     db.init_app(app)
 
     with app.app_context():
+        dbConnector.create_database_if_not_exists('sito')
+        dbConnector.run_migration('sito')
         Role.insert_roles()
         User.insert_admin()
 
@@ -85,23 +86,10 @@ def create_app():
     def load_user(id):
         return User.query.get(int(id))
     
-    
-
     return app
 
 
-def create_postgres_url():
-    url = 'postgresql+psycopg2://'
-    url += os.getenv('POSTGRES_USER') + ':'
-    url += os.getenv('POSTGRES_PASSWORD') + '@' 
-    url += os.getenv('POSTGRES_URL') + '/'
-    url += os.getenv('POSTGRES_DB')
-    return url
 
-def create_database_if_not_exists():
-    engine = create_engine(create_postgres_url())
-    if not database_exists(engine.url):
-        create_database(engine.url)
 
 
 if __name__ == '__main__':

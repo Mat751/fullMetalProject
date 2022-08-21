@@ -149,7 +149,8 @@ class Form(BaseComponent):
                                  height='50%',margin='4px',datapath=".record")
         
         self.anagrafica(center)    
-        self.pagamenti(center,anno="22/23")
+        #TODO sistemare pagamenti al momento salvano tutti nello stesso luogo
+        self.pagamenti(center,anno="21/22")
         #self.pagamenti(center,anno="22/23")
 
     

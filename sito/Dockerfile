@@ -5,7 +5,7 @@ WORKDIR /app
 RUN apt-get update && apt-get upgrade -y
 RUN apt-get install -y --no-install-recommends \
     build-essential gcc libmariadb-dev nginx \
-    psycopg2 libpq-dev python-dev
+    libpq-dev python-dev
 
 COPY ./requirements.txt /app/requirements.txt
 
